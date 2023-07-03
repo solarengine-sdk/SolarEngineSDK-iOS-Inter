@@ -1,0 +1,16 @@
+PODS:
+  - SolarEngineSDKiOSInter (0.1.0)
+
+DEPENDENCIES:
+  - SolarEngineSDKiOSInter (from `../SolarEngineSDKiOSInter.podspec`)
+
+EXTERNAL SOURCES:
+  SolarEngineSDKiOSInter:
+    :path: "../SolarEngineSDKiOSInter.podspec"
+
+SPEC CHECKSUMS:
+  SolarEngineSDKiOSInter: bd5edcfe583da216e9b97608edc1017bc72150b6
+
+PODFILE CHECKSUM: c2592dfa23c5c247297bbb4c30f7f85863676f00
+
+COCOAPODS: 1.12.1

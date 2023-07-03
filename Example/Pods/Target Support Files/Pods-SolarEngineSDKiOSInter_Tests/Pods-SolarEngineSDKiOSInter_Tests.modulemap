@@ -1,0 +1,6 @@
+framework module Pods_SolarEngineSDKiOSInter_Tests {
+  umbrella header "Pods-SolarEngineSDKiOSInter_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}
