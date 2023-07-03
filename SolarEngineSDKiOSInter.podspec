@@ -8,35 +8,23 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SolarEngineSDKiOSInter'
-  s.version          = '0.1.0'
+  s.version          = '1.2.1.0'
   s.summary          = 'A short description of SolarEngineSDKiOSInter.'
 
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
-
-  s.description      = <<-DESC
-TODO: Add long description of the pod here.
-                       DESC
-
-  s.homepage         = 'https://github.com/solarengine-sdk/SolarEngineSDKiOSInter'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
-  s.license          = { :type => 'MIT', :file => 'LICENSE' }
+  s.homepage         = 'https://www.solar-engine.com'
+  s.license          =  { :type => "Apache License, Version 2.0" }
   s.author           = { 'solarengine-sdk' => 'sdk@solar-engine.com' }
-  s.source           = { :git => 'https://github.com/solarengine-sdk/SolarEngineSDKiOSInter.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.source           = { :git => 'https://github.com/solarengine-sdk/SolarEngineSDK-iOS-Inter.git', :tag => s.version.to_s }
 
-  s.ios.deployment_target = '10.0'
+  s.ios.deployment_target = '11.0'
 
-  s.source_files = 'SolarEngineSDKiOSInter/Classes/**/*'
+  s.vendored_frameworks = 'SolarEngineSDKiOSInter/SolarEngineSDK.framework'
   
-  # s.resource_bundles = {
-  #   'SolarEngineSDKiOSInter' => ['SolarEngineSDKiOSInter/Assets/*.png']
-  # }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.frameworks = "Security", "CoreTelephony", "AdSupport", "SystemConfiguration", "iAd", "AdServices", "AppTrackingTransparency"
+  s.libraries = "sqlite3"
+  s.requires_arc = true
+  
+  s.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+  s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+  
 end
