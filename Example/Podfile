@@ -1,0 +1,6 @@
+use_frameworks!
+target 'SolarEngineSDKiOSInter_Tests' do
+  pod 'SolarEngineSDKiOSInter', :path => '../'
+  
+  
+end
