@@ -8,8 +8,9 @@
 #import <Foundation/Foundation.h>
 #import <SolarEngineSDK/SEEventConstants.h>
 #import <UIKit/UIKit.h>
+#import <Webkit/WebKit.h>
 
-#define SESDKVersion @"1.2.1.0"
+#define SESDKVersion @"1.2.2.0"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -97,6 +98,11 @@ ENUM：SERCMergeTypeUser 在App版本更新时会清除缓存配置
 /// @param eventType 事件类型
 /// @param properties 事件属性
 - (void)setPresetEvent:(SEPresetEventType)eventType withProperties:(NSDictionary*)properties;
+
+/// 设置预置事件属性
+/// @param webView  系统回调的WKWebView
+/// @param request 系统回调的navigationAction.request
+- (BOOL)showUpWebView:(WKWebView *)webView withRequest:(NSURLRequest *)request ;
 
 /*
  code说明如下。

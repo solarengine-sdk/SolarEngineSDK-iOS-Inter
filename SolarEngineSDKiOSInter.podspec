@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SolarEngineSDKiOSInter'
-  s.version          = '1.2.1.0'
+  s.version          = '1.2.2.0'
 
   s.homepage         = 'https://www.solar-engine.com'
   s.license          =  { :type => "Apache License, Version 2.0" }

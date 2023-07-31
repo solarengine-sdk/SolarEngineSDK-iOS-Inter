@@ -15,6 +15,7 @@
 			dependencies = (
 			);
 			name = SolarEngineSDKiOSInter;
+			productName = SolarEngineSDKiOSInter;
 		};
 /* End PBXAggregateTarget section */
 
@@ -37,20 +38,20 @@
 /* Begin PBXFileReference section */
 		13CCCD90CEB522123D3E0448688FAD5A /* SolarEngineSDKiOSInter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SolarEngineSDKiOSInter.release.xcconfig; sourceTree = "<group>"; };
 		182884B508184FDBBDAE4C596F1EB65A /* Pods-SolarEngineSDKiOSInter_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SolarEngineSDKiOSInter_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		2690AF5291AD5F439F562899CF85A462 /* SolarEngineSDKiOSInter.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = SolarEngineSDKiOSInter.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		2690AF5291AD5F439F562899CF85A462 /* SolarEngineSDKiOSInter.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = SolarEngineSDKiOSInter.podspec; sourceTree = "<group>"; tabWidth = 2; };
 		31772DEEDA5C8CA6EBD7ECA212185391 /* Pods-SolarEngineSDKiOSInter_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SolarEngineSDKiOSInter_Tests-Info.plist"; sourceTree = "<group>"; };
 		4C82A105BEA4287B967B7C130A47F983 /* Pods-SolarEngineSDKiOSInter_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SolarEngineSDKiOSInter_Tests-umbrella.h"; sourceTree = "<group>"; };
 		529A3C5D5AA607FFE06C4A71207D28F8 /* Pods-SolarEngineSDKiOSInter_Tests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-SolarEngineSDKiOSInter_Tests"; path = Pods_SolarEngineSDKiOSInter_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		56969C923F7C65D49E0B54CD17A3BBC7 /* Pods-SolarEngineSDKiOSInter_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SolarEngineSDKiOSInter_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		7EFC27724558B2C8B574F5F2704A83AE /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		7EFC27724558B2C8B574F5F2704A83AE /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		800E84D2E3A65E385787B9E2C75FF7D5 /* Pods-SolarEngineSDKiOSInter_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-SolarEngineSDKiOSInter_Tests.modulemap"; sourceTree = "<group>"; };
 		8A164F2F98EE3D484A514111412B7122 /* Pods-SolarEngineSDKiOSInter_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SolarEngineSDKiOSInter_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		99D4AFF2F1DEE14EEC18D674C6C9A073 /* Pods-SolarEngineSDKiOSInter_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SolarEngineSDKiOSInter_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		AF93C9D921FFD1A8CB34D447DB13CC09 /* SolarEngineSDKiOSInter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SolarEngineSDKiOSInter.debug.xcconfig; sourceTree = "<group>"; };
 		F455C3775DF61A60548AC70B8754B9FA /* Pods-SolarEngineSDKiOSInter_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SolarEngineSDKiOSInter_Tests-dummy.m"; sourceTree = "<group>"; };
-		F8F1C53C69A91E3144170D7FD8C73B82 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		F8F1C53C69A91E3144170D7FD8C73B82 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -325,8 +326,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
