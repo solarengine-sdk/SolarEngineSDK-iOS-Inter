@@ -10,7 +10,7 @@
 #import <UIKit/UIKit.h>
 #import <Webkit/WebKit.h>
 
-#define SESDKVersion @"1.2.2.0"
+#define SESDKVersion @"1.2.3.0"
 
 NS_ASSUME_NONNULL_BEGIN
 
