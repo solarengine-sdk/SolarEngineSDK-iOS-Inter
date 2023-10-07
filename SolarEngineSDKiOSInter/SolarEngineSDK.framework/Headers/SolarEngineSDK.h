@@ -9,86 +9,33 @@
 #import <SolarEngineSDK/SEEventConstants.h>
 #import <UIKit/UIKit.h>
 #import <Webkit/WebKit.h>
+#import <SolarEngineSDK/SEConfig.h>
 
-#define SESDKVersion @"1.2.3.1"
+#define SESDKVersion @"1.2.4.0"
 
 NS_ASSUME_NONNULL_BEGIN
-
-typedef NS_ENUM(NSInteger, SERCMergeType) {
-    SERCMergeTypeDefault      = 0, // 默认策略，读取缓存配置+默认配置跟服务端配置合并
-    SERCMergeTypeUser         = 1, // App版本更新时，使用默认配置+服务端合并（丢弃缓存配置）
-};
-
 
 typedef void (^SEAttributionCallback)(int code, NSDictionary * _Nullable attributionData);
 
 @class UIView, UIViewController;
-
-@interface SERemoteConfig : NSObject
-
-/**1
- 线参数SDK启用开关，默认为关闭状态
-*/
-@property (nonatomic, assign) BOOL enable;
-
-/**
-自定义ID, 用来匹配用户在后台设置规则时设置的自定义ID
-*/
-@property (nonatomic, strong) NSDictionary *customIDProperties;
-
-/**
- * 自定义ID 事件属性
- */
-@property (nonatomic, strong) NSDictionary *customIDEventProperties;
-
-/**
- * 自定义ID 用户属性
- */
-@property (nonatomic, strong) NSDictionary *customIDUserProperties;
-
-/**
-SDK配置合并策略，默认情况下服务端配置跟本地缓存配置合并
-ENUM：SERCMergeTypeUser 在App版本更新时会清除缓存配置
-*/
-@property (nonatomic, assign) SERCMergeType mergeType;
-
-/// 是否开启 本地调试日志（不设置时默认不开启 本地日志）
-@property (nonatomic, assign) BOOL logEnabled;
-
-@end
-
-
-@interface SEConfig : NSObject
-
-/// 是否开启 本地调试日志（不设置时默认不开启 本地日志）
-@property (nonatomic, assign) BOOL logEnabled;
-
-/// 是否开启 Debug 模式，开启后能在后台实时查看数据（不设置时默认不开启 Debug 模式）
-/// Debug 模式 切记发布到线上 !!!
-@property (nonatomic, assign) BOOL isDebugModel;
-
-/// 是否为GDPR区域，默认为不做GDPR区域限制
-@property (nonatomic, assign) BOOL isGDPRArea;
-
-/// 自动追踪埋点采集类型，SDK默认不开启自动追踪埋点采集
-@property(nonatomic, assign) SEAutoTrackEventType autoTrackEventType;
-
-@property (nonatomic, assign) BOOL disableRecordLog;
-
-@property (nonatomic, strong) SERemoteConfig * remoteConfig;
-
-@end
 
 @interface SolarEngineSDK : NSObject
 
 /// SolarEngineSDK 单例
 + (nonnull instancetype)sharedInstance;
 
+/// 预初始化 SDK
+/// @param appKey  应用 appKey，请联系商务人员获取。不允许空
+/// @param userId 用户 ID，请联系商务人员获取。不允许空
+- (void)preInitWithAppKey:(nonnull NSString *)appKey userId:(nonnull NSString *)userId;
+
+
 /// 初始化 SDK
 /// @param appKey  应用 appKey，请联系商务人员获取。不允许空
 /// @param userId 用户 ID，请联系商务人员获取。不允许空
 /// @param config 配置信息
 - (void)startWithAppKey:(nonnull NSString *)appKey userId:(nonnull NSString *)userId config:(SEConfig *)config;
+
 
 /// 是否开启 GDPR区域限制（不设置时默认不开启 GDPR区域限制）
 /// @param isGDPRArea YES 表示开启，NO 表示关闭（开启后SDK将不获取IDFA、IDFV）
@@ -113,7 +60,7 @@ ENUM：SERCMergeTypeUser 在App版本更新时会清除缓存配置
  102: _distinct_id_type无效
  1001: 网络错误，SDK链接服务端失败
  1002: 当次启动请求超过10次还未获取到归因结果
- 1003: 具体上次轮询请求归因结果小于5分钟，请5分钟后再试
+ 1003: 距离上次轮询请求归因结果小于5分钟，请5分钟后再试
  1004: 该用户超过15天未获取到归因结果，此次安装内将不再请求归因结果
  */
 /// 设置获取归因结果回调，请在初始化SDK前设置回调
@@ -254,6 +201,11 @@ ENUM：SERCMergeTypeUser 在App版本更新时会清除缓存配置
 /// SEUserDeleteTypeByAccountId：通过AccountId删除用户
 /// SEUserDeleteTypeByVisitorId：   通过VisitorId删除用户
 - (void)userDelete:(SEUserDeleteType)deleteType;
+
+
+/// 获取SDK版本号
+- (NSString *)getSDKVersion;
+
 
 @end
 
