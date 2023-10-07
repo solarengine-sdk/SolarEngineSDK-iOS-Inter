@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SolarEngineSDKiOSInter'
-  s.version          = '1.2.3.1'
+  s.version          = '1.2.4.0'
 
   s.homepage         = 'https://www.solar-engine.com'
   s.license          =  { :type => "Apache License, Version 2.0" }
@@ -20,7 +20,7 @@ Pod::Spec.new do |s|
 
   s.vendored_frameworks = 'SolarEngineSDKiOSInter/SolarEngineSDK.framework'
   
-  s.frameworks = "Security", "CoreTelephony", "AdSupport", "SystemConfiguration", "iAd", "AdServices", "AppTrackingTransparency"
+  s.frameworks = "Security", "CoreTelephony", "AdSupport", "SystemConfiguration", "AdServices", "AppTrackingTransparency"
   s.libraries = "sqlite3"
   s.requires_arc = true
   
