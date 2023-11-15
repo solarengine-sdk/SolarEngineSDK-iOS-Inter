@@ -11,7 +11,7 @@
 #import <Webkit/WebKit.h>
 #import <SolarEngineSDK/SEConfig.h>
 
-#define SESDKVersion @"1.2.5.1"
+#define SESDKVersion @"1.2.5.2"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -26,8 +26,7 @@ typedef void (^SEAttributionCallback)(int code, NSDictionary * _Nullable attribu
 
 /// 预初始化 SDK
 /// @param appKey  应用 appKey，请联系商务人员获取。不允许空
-/// @param userId 用户 ID，请联系商务人员获取。不允许空
-- (void)preInitWithAppKey:(nonnull NSString *)appKey userId:(nonnull NSString *)userId;
+- (void)preInitWithAppKey:(nonnull NSString *)appKey;
 
 
 /// 初始化 SDK
@@ -105,6 +104,12 @@ typedef void (^SEAttributionCallback)(int code, NSDictionary * _Nullable attribu
 /// 上报订单事件
 /// @param attribute  SEOrderEventAttribute 实例
 - (void)trackOrderWithAttributes:(SEOrderEventAttribute *)attribute;
+
+
+/// 上报首次事件
+/// @param attribute  请传 SEEventBaseAttribute 的子类，具体的事件EventAttribute
+- (void)trackFirstEvent:(SEEventBaseAttribute *)attribute;
+
 
 /// 上报浏览 App 页面事件
 /// @param viewController 视图控制器

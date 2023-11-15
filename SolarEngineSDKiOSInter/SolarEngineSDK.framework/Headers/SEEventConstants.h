@@ -180,7 +180,27 @@ typedef NS_ENUM(NSInteger, SolarEngineAdType) {
     SolarEngineAdTypeOther              = 10
 };*/
 
-@interface SEIAPEventAttribute : NSObject
+
+@interface SEEventBaseAttribute : NSObject
+
+/// 首次事件的唯一标识
+@property (nonatomic, copy) NSString *firstCheckId;
+
+@end
+
+
+@interface SECustomEventAttribute : SEEventBaseAttribute
+
+/// 自定义事件名称
+@property (nonatomic, copy) NSString *eventName;
+
+/// 自定义属性
+@property (nonatomic, copy) NSDictionary *customProperties;
+
+@end
+
+
+@interface SEIAPEventAttribute : SEEventBaseAttribute
 
 /// 购买商品的ID
 @property (nonatomic, copy, nonnull) NSString *productID;
@@ -222,7 +242,7 @@ typedef NS_ENUM(NSInteger, SolarEngineAdType) {
 
 @end
 
-@interface SEAdImpressionEventAttribute : NSObject
+@interface SEAdImpressionEventAttribute : SEEventBaseAttribute
 
 /// 广告类型（如开屏、激励视频等）
 /* 用户须传整型数值到接口，整型数值对应如下：
@@ -299,7 +319,7 @@ typedef NS_ENUM(NSInteger, SolarEngineAdType) {
 
 
 /// 用户注册事件属性
-@interface SERegisterEventAttribute : NSObject
+@interface SERegisterEventAttribute : SEEventBaseAttribute
 
 /// 注册类型 不超过 32 字符
 @property (nonatomic, copy, nonnull) NSString *registerType;
@@ -313,7 +333,7 @@ typedef NS_ENUM(NSInteger, SolarEngineAdType) {
 @end
 
 /// 登录事件属性
-@interface SELoginEventAttribute : NSObject
+@interface SELoginEventAttribute : SEEventBaseAttribute
 
 /// 登录类型 不超过 32 字符
 @property (nonatomic, copy, nonnull) NSString *loginType;
@@ -327,7 +347,7 @@ typedef NS_ENUM(NSInteger, SolarEngineAdType) {
 @end
 
 /// 订单事件属性
-@interface SEOrderEventAttribute : NSObject
+@interface SEOrderEventAttribute : SEEventBaseAttribute
 
 /// 订单 ID 不超过 128  字符
 @property (nonatomic, copy, nonnull) NSString *orderID;
@@ -349,7 +369,7 @@ typedef NS_ENUM(NSInteger, SolarEngineAdType) {
 
 @end
 
-@interface SEAdClickEventAttribute : NSObject
+@interface SEAdClickEventAttribute : SEEventBaseAttribute
 
 /// 广告类型（如开屏、激励视频等）
 /* 用户须传整型数值到接口，整型数值对应如下：
@@ -412,7 +432,7 @@ typedef NS_ENUM(NSInteger, SolarEngineAdType) {
 
 @end
 
-@interface SEAppAttrEventAttribute : NSObject
+@interface SEAppAttrEventAttribute : SEEventBaseAttribute
 
 // 投放广告的渠道 ID，需要与发行平台匹配
 @property (nonatomic, copy) NSString *adNetwork;
