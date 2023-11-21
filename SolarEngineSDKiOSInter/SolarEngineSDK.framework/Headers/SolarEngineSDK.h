@@ -11,7 +11,7 @@
 #import <Webkit/WebKit.h>
 #import <SolarEngineSDK/SEConfig.h>
 
-#define SESDKVersion @"1.2.5.2"
+#define SESDKVersion @"1.2.5.3"
 
 NS_ASSUME_NONNULL_BEGIN
 
