@@ -11,7 +11,7 @@
 #import <Webkit/WebKit.h>
 #import <SolarEngineSDK/SEConfig.h>
 
-#define SESDKVersion @"1.2.5.3"
+#define SESDKVersion @"1.2.6.0"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -69,6 +69,10 @@ typedef void (^SEAttributionCallback)(int code, NSDictionary * _Nullable attribu
 /// 获取归因结果
 /// 如果没有归因结果则返回nil
 - (NSDictionary *)getAttributionData;
+
+
+/// 获取SDK事件基础属性
+- (NSDictionary *)getPresetProperties;
 
 #pragma 事件
 
