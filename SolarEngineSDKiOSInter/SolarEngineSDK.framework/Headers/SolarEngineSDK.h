@@ -11,7 +11,7 @@
 #import <Webkit/WebKit.h>
 #import <SolarEngineSDK/SEConfig.h>
 
-#define SESDKVersion @"1.2.6.0"
+#define SESDKVersion @"1.2.6.1"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -210,6 +210,40 @@ typedef void (^SEAttributionCallback)(int code, NSDictionary * _Nullable attribu
 /// SEUserDeleteTypeByAccountId：通过AccountId删除用户
 /// SEUserDeleteTypeByVisitorId：   通过VisitorId删除用户
 - (void)userDelete:(SEUserDeleteType)deleteType;
+
+/// SKAN API 封装
+/// 参考：https://developer.apple.com/documentation/storekit/skadnetworkcoarseconversionvalue?language=objc
+/// 封装 SKAdNetwork 的 updatePostbackConversionValue:completionHandler:
+/*
+ * @param conversionValue 转化值，必须在 0 - 63 之间
+ * @param completion 处理完成的回调，不需要处理可以传nil
+*/
+- (void)updatePostbackConversionValue:(NSInteger)conversionValue
+                    completionHandler:(void (^)(NSError *error))completion;
+
+/// 封装 SKAdNetwork 的 updatePostbackConversionValue:coarseValue:completionHandler:
+/*
+ * @param fineValue 转化值，必须在 0 - 63 之间
+ * @param coarseValue SKAdNetworkCoarseConversionValue 值，粗粒度转化值。 如果应用安装量不足，未能达到隐私阈值，就会启用粗粒度转化值
+ 参考：https://developer.apple.com/documentation/storekit/skadnetworkcoarseconversionvalue?language=objc
+ * @param completion 处理完成的回调，不需要处理可以传nil
+*/
+- (void)updatePostbackConversionValue:(NSInteger)fineValue
+                          coarseValue:(NSString *)coarseValue
+                    completionHandler:(void (^)(NSError *error))completion;
+
+/// 封装 SKAdNetwork 的 updatePostbackConversionValue:coarseValue:lockWindow:completionHandler:
+/*
+ * @param fineValue 转化值，必须在 0 - 63 之间
+ * @param coarseValue SKAdNetworkCoarseConversionValue 值，粗粒度转化值。 如果应用安装量不足，未能达到隐私阈值，就会启用粗粒度转化值
+ 参考：https://developer.apple.com/documentation/storekit/skadnetworkcoarseconversionvalue?language=objc
+ * @param lockWindow 是否在转换窗口结束之前发送回调。true告诉系统发送回调，而不必等待转换窗口结束。默认值为false。
+ * @param completion 处理完成的回调，不需要处理可以传nil
+*/
+- (void)updatePostbackConversionValue:(NSInteger)fineValue
+                          coarseValue:(NSString *)coarseValue
+                           lockWindow:(BOOL)lockWindow
+                    completionHandler:(void (^)(NSError *error))completion;
 
 
 /// 获取SDK版本号
