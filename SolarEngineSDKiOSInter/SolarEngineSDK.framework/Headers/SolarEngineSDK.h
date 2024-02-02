@@ -11,7 +11,7 @@
 #import <Webkit/WebKit.h>
 #import <SolarEngineSDK/SEConfig.h>
 
-#define SESDKVersion @"1.2.6.1"
+#define SESDKVersion @"1.2.7.0"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -28,13 +28,10 @@ typedef void (^SEAttributionCallback)(int code, NSDictionary * _Nullable attribu
 /// @param appKey  应用 appKey，请联系商务人员获取。不允许空
 - (void)preInitWithAppKey:(nonnull NSString *)appKey;
 
-
 /// 初始化 SDK
 /// @param appKey  应用 appKey，请联系商务人员获取。不允许空
-/// @param userId 用户 ID，请联系商务人员获取。不允许空
 /// @param config 配置信息
-- (void)startWithAppKey:(nonnull NSString *)appKey userId:(nonnull NSString *)userId config:(SEConfig *)config;
-
+- (void)startWithAppKey:(nonnull NSString *)appKey config:(SEConfig *)config;
 
 /// 是否开启 GDPR区域限制（不设置时默认不开启 GDPR区域限制）
 /// @param isGDPRArea YES 表示开启，NO 表示关闭（开启后SDK将不获取IDFA、IDFV）
@@ -79,7 +76,7 @@ typedef void (^SEAttributionCallback)(int code, NSDictionary * _Nullable attribu
 /// 上报自定义事件
 /// @param eventName 事件名称 事件名支持大小写中英文、数字、下划线，不能以下划线开头，长度不超过 40
 /// @param properties 事件属性
-- (void)track:(NSString *)eventName withProperties:(NSDictionary *)properties;
+- (void)track:(NSString *)eventName withProperties:( NSDictionary * _Nullable )properties;
 
 /// 上报应用内购买事件
 /// @param attribute SEIAPEventAttribute 实例
@@ -133,6 +130,9 @@ typedef void (^SEAttributionCallback)(int code, NSDictionary * _Nullable attribu
 /// @param eventName 事件名 事件名支持大小写中英文、数字、下划线，不能以下划线开头，长度不超过 40
 /// @param properties 自定义属性
 - (void)eventFinish:(NSString *)eventName properties:(NSDictionary * _Nullable )properties;
+
+/// 上报事件，立即上报
+- (void)reportEventImmediately;
 
 /// 设置自动追踪类型，默认不开启自动追踪
 /// @param eventType 枚举类型，
@@ -225,7 +225,6 @@ typedef void (^SEAttributionCallback)(int code, NSDictionary * _Nullable attribu
 /*
  * @param fineValue 转化值，必须在 0 - 63 之间
  * @param coarseValue SKAdNetworkCoarseConversionValue 值，粗粒度转化值。 如果应用安装量不足，未能达到隐私阈值，就会启用粗粒度转化值
- 参考：https://developer.apple.com/documentation/storekit/skadnetworkcoarseconversionvalue?language=objc
  * @param completion 处理完成的回调，不需要处理可以传nil
 */
 - (void)updatePostbackConversionValue:(NSInteger)fineValue
@@ -236,7 +235,6 @@ typedef void (^SEAttributionCallback)(int code, NSDictionary * _Nullable attribu
 /*
  * @param fineValue 转化值，必须在 0 - 63 之间
  * @param coarseValue SKAdNetworkCoarseConversionValue 值，粗粒度转化值。 如果应用安装量不足，未能达到隐私阈值，就会启用粗粒度转化值
- 参考：https://developer.apple.com/documentation/storekit/skadnetworkcoarseconversionvalue?language=objc
  * @param lockWindow 是否在转换窗口结束之前发送回调。true告诉系统发送回调，而不必等待转换窗口结束。默认值为false。
  * @param completion 处理完成的回调，不需要处理可以传nil
 */
@@ -248,6 +246,13 @@ typedef void (^SEAttributionCallback)(int code, NSDictionary * _Nullable attribu
 
 /// 获取SDK版本号
 - (NSString *)getSDKVersion;
+
+
+/// 初始化 SDK
+/// @param appKey  应用 appKey，请联系商务人员获取。不允许空
+/// @param userId 用户 ID，请联系商务人员获取。不允许空
+/// @param config 配置信息
+- (void)startWithAppKey:(nonnull NSString *)appKey userId:(nonnull NSString *)userId config:(SEConfig *)config  DEPRECATED_MSG_ATTRIBUTE("Use startWithAppKey:config:");
 
 
 @end

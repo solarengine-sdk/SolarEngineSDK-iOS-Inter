@@ -18,7 +18,7 @@ typedef NS_ENUM(NSInteger, SERCMergeType) {
 
 @interface SERemoteConfig : NSObject
 
-/**1
+/**
  线参数SDK启用开关，默认为关闭状态
 */
 @property (nonatomic, assign) BOOL enable;
@@ -64,7 +64,13 @@ ENUM：SERCMergeTypeUser 在App版本更新时会清除缓存配置
 /// 自动追踪埋点采集类型，SDK默认不开启自动追踪埋点采集
 @property(nonatomic, assign) SEAutoTrackEventType autoTrackEventType;
 
+
+/// 2G网络是否上报数据，默认只有3G、4G、5G、WiFi上报，2G不上报
+@property (nonatomic, assign) BOOL enable2GReporting;
+
+
 @property (nonatomic, assign) BOOL disableRecordLog;
+
 
 /// 在线参数config (不使用在线参数则不需要设置)
 @property (nonatomic, strong) SERemoteConfig * remoteConfig;
