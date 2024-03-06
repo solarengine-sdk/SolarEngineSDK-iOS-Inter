@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SolarEngineSDKiOSInter'
-  s.version          = '1.2.7.0'
+  s.version          = '1.2.7.1'
 
   s.homepage         = 'https://www.solar-engine.com'
   s.license          =  { :type => "Apache License, Version 2.0" }
@@ -23,7 +23,8 @@ Pod::Spec.new do |s|
   s.frameworks = "Security", "CoreTelephony", "AdSupport", "SystemConfiguration", "AdServices", "AppTrackingTransparency"
   s.libraries = "sqlite3"
   s.requires_arc = true
-  
+  s.resource_bundles = {'SolarEngineSDK' => ['SolarEngineSDKiOSInter/SolarEngineSDK.framework/PrivacyInfo.xcprivacy']}
+
   s.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
   s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
   

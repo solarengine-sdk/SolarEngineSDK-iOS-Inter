@@ -14,7 +14,7 @@
 		</data>
 		<key>Headers/SolarEngineSDK.h</key>
 		<data>
-		uzn0HkF9XBu3p0DqG32WQRaMKsk=
+		KfiPmCm3r+6UmYR7m8d08prUYWc=
 		</data>
 		<key>Info.plist</key>
 		<data>
@@ -23,6 +23,10 @@
 		<key>Modules/module.modulemap</key>
 		<data>
 		hRNgwzrMmivy0+t0B8rb0fXhwPM=
+		</data>
+		<key>PrivacyInfo.xcprivacy</key>
+		<data>
+		6PyG/Sn5jh81qqGDYJ701GSxHBw=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -53,11 +57,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			uzn0HkF9XBu3p0DqG32WQRaMKsk=
+			KfiPmCm3r+6UmYR7m8d08prUYWc=
 			</data>
 			<key>hash2</key>
 			<data>
-			4G4WBktklGCX3j+kA8oqxBdclvQ1Bi2Hp001qgPPyP4=
+			qBnl0IkkjRSjjMdyBKtTKhwIeWFEPOrM0rHy7xnATuo=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -69,6 +73,17 @@
 			<key>hash2</key>
 			<data>
 			GtVaUbzbWFGsOAFeAi4FfXtzOaDy+qYBiR2i3BSMXoA=
+			</data>
+		</dict>
+		<key>PrivacyInfo.xcprivacy</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			6PyG/Sn5jh81qqGDYJ701GSxHBw=
+			</data>
+			<key>hash2</key>
+			<data>
+			3I1+H5p9p/M4HzB0a1kgbuYs4iW2n+O8u2YjT4RZvjU=
 			</data>
 		</dict>
 	</dict>
